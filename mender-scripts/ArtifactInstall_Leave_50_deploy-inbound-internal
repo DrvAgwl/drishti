@@ -1,0 +1,11 @@
+#!/bin/sh
+[ "$UID" -eq 0 ] || exec sudo bash "$0" "$@" 
+cd /opt/udaan/drishti
+mkdir -p data/
+cp conf/drishti_supervisor.conf /etc/supervisor/conf.d/drishti_supervisor.conf
+cd src
+pip3 install -r requirements.txt
+cp .env.inbound-internal .env
+supervisorctl reread
+supervisorctl update
+supervisorctl restart drishti

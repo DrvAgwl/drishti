@@ -1,0 +1,3 @@
+#!/bin/sh
+#[ "$UID" -eq 0 ] || exec sudo bash "$0" "$@" 
+sudo chown $USER -R /opt/udaan/

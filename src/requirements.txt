@@ -1,0 +1,4 @@
+pigpio
+python-dotenv
+requests
+yaml-config-parser
